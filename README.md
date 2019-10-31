@@ -14,10 +14,10 @@ It can be divided into two major segments: alignment to reference genome and dat
 
 ### Changes Introduced by Seven Bridges
 
-This pipeline represents the CWL implementation of BROADs [original WDL file](https://github.com/gatk-workflows/gatk4-data-processing/pull/14) available on github. Minor differences are introduced in order to successfully adapt to the SB platform. These differences are listed below:
+This pipeline represents the CWL implementation of BROADs [original WDL file](https://github.com/gatk-workflows/gatk4-data-processing/pull/14) available on github. Minor differences are introduced in order to successfully adapt to the Seven Bridges Platform. These differences are listed below:
 * **SamToFastqAndBwaMem** step is divided into elementary steps: **SamToFastq** and  **BWA Mem**  
 * **SortAndFixTags** is divided into elementary steps: **SortSam** and **SetNmMdAndUqTags**
-* Added **SBG Lines to Interval List** - this tool is used to adapt results obtained with **CreateSequenceGroupingTSV**  for platform execution, more precisely for scattering.
+* Added **SBG Lines to Interval List**: this tool is used to adapt results obtained with **CreateSequenceGroupingTSV**  for platform execution, more precisely for scattering.
 
 
 ### Common Issues and Important Notes
@@ -27,16 +27,23 @@ This pipeline represents the CWL implementation of BROADs [original WDL file](ht
 * For each tool in the workflow, equivalent parameter settings to the one listed in the corresponding WDL file are set as defaults. 
 
 ### Performance Benchmarking
-Since this CWL implementation is meant to be equivalent to GATKs original WDL, there is no additional optimization steps beside instance and storage definition. 
-AWS instance hint c5.9xlarge is used for WGS inputs and attached storage is set to 1.5TB.
+Since this CWL implementation is meant to be equivalent to GATKs original WDL, there are no additional optimization steps beside instance and storage definition. 
+The c5.9xlarge AWS instance hint is used for WGS inputs and attached storage is set to 1.5TB.
 In the table given below one can find results of test runs for WGS and WES samples. All calculations are performed with reference files corresponding to assembly 38.
 
 *Cost can be significantly reduced by spot instance usage. Visit knowledge center for more details.*
 
-| Input Size | Experimental Strategy | Duration | Cost (spot) | AWS Instance Type |
-| --- | --- | --- | --- | --- |
-| 6.6 GiB | WES | 1h 9min | $2.02 | c5.9 |
-| 185GiB| WGS | 1day 8h | $56.05 | c5.9 |
+| Input Size | Experimental Strategy | Coverage| Duration | Cost (spot) | AWS Instance Type |
+| --- | --- | --- | --- | --- | --- | 
+| 6.6 GiB | WES | 70 |1h 9min | $2.02 | c5.9 |
+|3.4 GiB | WES |  40 | 39min   | $1.15 | c5.9 |
+|2.1 GiB | WES |  20 | 28min   | $0.82 | c5.9 |
+|0.7 GiB | WES |  10 | 14min   | $0.42 | c5.9 |
+| 116 GiB   | WGS (HG001) | 50 | 1day 1h 22min   | $49.19 | r4.8 |
+| 185 GiB   | WGS | 50 |1day 8h  14 min   | $56.05 | c5.9 |
+| 111.3 GiB| WGS | 30 |19h 27min | $33.82 | c5.9 |
+| 37.2 GiB  | WGS | 10 |6h 22min   | $11.09 | c5.9 |
+
 
 
 ### API Python Implementation
