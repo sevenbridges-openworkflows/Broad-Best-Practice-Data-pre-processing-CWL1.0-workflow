@@ -1,5 +1,11 @@
+dct:creator:
+  "@id": "sbg"
+  foaf:name: SevenBridges
+  foaf:mbox: "mailto:support@sbgenomics.com"
 $namespaces:
   sbg: https://sevenbridges.com
+  dct: http://purl.org/dc/terms/
+  foaf: http://xmlns.com/foaf/0.1/
 class: Workflow
 cwlVersion: v1.0
 doc: "**BROAD Best Practice Data Pre-processing Workflow 4.1.0.0**  is used to prepare\
