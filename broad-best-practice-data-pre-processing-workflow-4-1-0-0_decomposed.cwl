@@ -19,7 +19,7 @@ doc: "**BROAD Best Practice Data Pre-processing Workflow 4.1.0.0**  is used to p
   \ germline short variant per-sample calling workflow** [2], **Somatic CNVs workflow**\
   \ [3] and **Somatic SNVs+Indel workflow** [4].\n\n\n### Changes Introduced by Seven\
   \ Bridges\n\nThis pipeline represents the CWL implementation of BROADs [original\
-  \ WDL file](https://github.com/gatk-workflows/gatk4-data-processing/pull/14) available\
+  \ WDL file](https://github.com/gatk-workflows/gatk4-data-processing) available\
   \ on github. Minor differences are introduced in order to successfully adapt to\
   \ the Seven Bridges Platform. These differences are listed below:\n* **SamToFastqAndBwaMem**\
   \ step is divided into elementary steps: **SamToFastq** and  **BWA Mem**  \n* **SortAndFixTags**\
