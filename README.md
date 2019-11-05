@@ -14,7 +14,7 @@ It can be divided into two major segments: alignment to reference genome and dat
 
 ### Changes Introduced by Seven Bridges
 
-This pipeline represents the CWL implementation of BROADs [original WDL file](https://github.com/gatk-workflows/gatk4-data-processing/pull/14) available on github. Minor differences are introduced in order to successfully adapt to the Seven Bridges Platform. These differences are listed below:
+This pipeline represents the CWL implementation of BROADs [original WDL file](https://github.com/gatk-workflows/gatk4-data-processing) available on github. Minor differences are introduced in order to successfully adapt to the Seven Bridges Platform. These differences are listed below:
 * **SamToFastqAndBwaMem** step is divided into elementary steps: **SamToFastq** and  **BWA Mem**  
 * **SortAndFixTags** is divided into elementary steps: **SortSam** and **SetNmMdAndUqTags**
 * Added **SBG Lines to Interval List**: this tool is used to adapt results obtained with **CreateSequenceGroupingTSV**  for platform execution, more precisely for scattering.
