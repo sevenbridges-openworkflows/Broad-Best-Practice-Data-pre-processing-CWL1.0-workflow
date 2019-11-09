@@ -1,15 +1,18 @@
+[![CWLtool validation](https://travis-ci.com/sevenbridges-openworkflows/Broad-Best-Practice-Data-pre-processing-CWL1.0-workflow.svg?branch=master)](https://travis-ci.com/sevenbridges-openworkflows/Broad-Best-Practice-Data-pre-processing-CWL1.0-workflow)
+
 ### Description
 
-**BROAD Best Practice Data Pre-processing Workflow 4.1.0.0**  is used to prepare data for variant calling analysis. 
+The **Broad Best Practice Data Pre-processing Workflow 4.1.0.0**  is used to prepare data for variant calling analysis. 
 
 It can be divided into two major segments: alignment to reference genome and data cleanup operations that correct technical biases [1].
 
 *A list of all inputs and parameters with corresponding descriptions can be found at the bottom of this page.*
 
+
 ### Common Use Cases
 
-* **BROAD Best Practice Data Pre-processing Workflow 4.1.0.0**  is designed to operate on individual samples.
-* Resulting BAM files are ready for variant calling analysis and can be further processed by other BROAD best practice pipelines, like **Generic germline short variant per-sample calling workflow** [2], **Somatic CNVs workflow** [3] and **Somatic SNVs+Indel workflow** [4].
+* The **Broad Best Practice Data Pre-processing Workflow 4.1.0.0**  is designed to operate on individual samples.
+* Resulting BAM files are ready for variant calling analysis and can be further processed by other Broad best practice pipelines, like **Generic germline short variant per-sample calling workflow** [2], **Somatic CNVs workflow** [3] and **Somatic SNVs+Indel workflow** [4].
 
 
 ### Changes Introduced by Seven Bridges
@@ -22,7 +25,7 @@ This pipeline represents the CWL implementation of BROADs [original WDL file](ht
 
 ### Common Issues and Important Notes
 
-* **BROAD Best Practice Data Pre-processing Workflow 4.1.0.0**  expects unmapped BAM file format as the main input.
+* The **Broad Best Practice Data Pre-processing Workflow 4.1.0.0**  expects unmapped BAM file format as the main input.
 * **Input Alignments** (`--in_alignments`) - provided unmapped BAM (uBAM) file should be in query-sorter order and all reads must have RG tags. Also, input uBAM files must pass validation by **ValidateSamFile**.
 * For each tool in the workflow, equivalent parameter settings to the one listed in the corresponding WDL file are set as defaults. 
 
